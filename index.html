@@ -8,15 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"> 
   <style>
     :root {
-      --primary: #00e6e6;
-      --primary-dark: #00b3b3;
-      --accent: #ffcc00;
-      --accent2: #ff0099;
-      --bg-dark: #0a1418;
-      --bg-mid: #152026;
-      --bg-light: #1e2c34;
-      --text-light: #f5f5f5;
-      --text-muted: #aaa;
+      --primary: #7b61ff;
+      --primary-dark: #5138d8;
+      --accent: #ff6ec7;
+      --accent2: #00f0ff;
+      --bg-dark: #0d0b1f;
+      --bg-mid: #1a1633;
+      --bg-light: #261f47;
+      --text-light: #ffffff;
+      --text-muted: #bbb;
     }
 
     * {
@@ -27,7 +27,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid), var(--bg-light));
+      background: radial-gradient(circle at top left, var(--bg-dark), var(--bg-mid), var(--bg-light));
       color: var(--text-light);
       min-height: 100vh;
       display: flex;
@@ -41,225 +41,188 @@
     header {
       text-align: center;
       padding: 2.5rem 1rem;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.07);
       width: 100%;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      backdrop-filter: blur(14px);
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.6);
       animation: fadeInDown 1s ease;
     }
-
     header h1 {
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-size: clamp(1.8rem, 5vw, 2.7rem);
       font-weight: 700;
-      color: var(--primary);
+      color: var(--accent2);
       margin-bottom: 0.6rem;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px var(--accent2);
     }
-
     header p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 500;
     }
 
-    /* Rules Box */
     .rules-box {
-      position: relative;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
       padding: 2rem;
-      max-width: 600px;
+      max-width: 650px;
       width: 92%;
       text-align: left;
       font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      line-height: 1.65;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      animation: fadeInUp 1s ease;
+      color: var(--accent2);
+      line-height: 1.7;
+      box-shadow: 0 0 30px rgba(123,97,255,0.4);
+      border: 2px solid rgba(255,255,255,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .rules-box:hover {
-      transform: translateY(-6px) scale(1.01);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 0 40px rgba(255,110,199,0.5);
     }
-
-    .rules-box::before {
-      content: "";
-      position: absolute;
-      top: -3px; left: -3px; right: -3px; bottom: -3px;
-      border-radius: 22px;
-      background: linear-gradient(270deg, var(--primary), var(--accent), var(--accent2), var(--primary));
-      background-size: 500% 500%;
-      z-index: -1;
-      animation: borderMove 10s ease infinite;
-    }
-
-    @keyframes borderMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     .rules-box h2 {
       text-align: center;
-      margin-bottom: 1.2rem;
-      font-size: 1.6rem;
-      color: var(--primary);
+      margin-bottom: 1.4rem;
+      font-size: 1.7rem;
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
     }
-
-    .rules-box ul {
-      list-style: none;
-    }
-
     .rules-box li {
-      margin-bottom: 12px;
-      font-size: 1rem;
+      margin-bottom: 14px;
+      font-size: 1.05rem;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
-
     .rules-box button {
-      margin-top: 18px;
+      margin-top: 20px;
       width: 100%;
       padding: 14px;
       border: none;
       border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #000;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      color: #fff;
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,230,230,0.3);
+      box-shadow: 0 0 20px rgba(255,110,199,0.6);
     }
-
     .rules-box button:hover {
-      background: linear-gradient(135deg, var(--primary-dark), #009999);
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--primary-dark), var(--accent2));
+      transform: translateY(-3px) scale(1.05);
     }
 
-    /* Card Stack */
     .card-stack {
       position: relative;
       width: 90%;
-      max-width: 450px;
-      aspect-ratio: 3 / 4;
+      max-width: 460px;
+      aspect-ratio: 3/4;
       margin: 20px auto;
-      perspective: 1000px;
-      animation: fadeInUp 1s ease;
+      perspective: 1100px;
     }
-
     .card {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
       background: #fff;
-      top: 0; left: 0;
+      border: 3px solid var(--primary);
       transition: transform 0.5s ease, opacity 0.5s ease;
-      will-change: transform, opacity;
     }
-
     .card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.4s ease, filter 0.3s ease;
     }
-
     .card:hover img {
-      transform: scale(1.08);
+      transform: scale(1.1);
+      filter: brightness(1.1);
     }
 
-    /* Comments Section */
     .comments-section {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255,255,255,0.08);
       padding: 2rem;
-      border-radius: 18px;
-      max-width: 600px;
+      border-radius: 20px;
+      max-width: 650px;
       width: 92%;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 0 25px rgba(0,240,255,0.4);
       animation: fadeInUp 1.2s ease;
     }
-
     .comments-section h2 {
       text-align: center;
-      margin-bottom: 1.2rem;
-      font-size: 1.5rem;
-      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      color: var(--accent2);
+      text-shadow: 0 0 10px var(--accent2);
     }
-
     .comment {
-      background: rgba(255,255,255,0.08);
-      padding: 12px 14px;
+      background: rgba(255,255,255,0.1);
+      padding: 12px 15px;
       border-radius: 12px;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
+      margin-bottom: 14px;
+      font-size: 1rem;
       color: var(--text-light);
-      border-left: 3px solid var(--primary);
-      transition: background 0.3s ease;
+      border-left: 3px solid var(--accent);
+      transition: background 0.3s ease, transform 0.2s ease;
     }
-
     .comment:hover {
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.02);
     }
-
     .comment-form {
       display: flex;
       flex-direction: column;
       gap: 14px;
       margin-top: 1rem;
     }
-
     .comment-form input {
       padding: 12px;
       border-radius: 10px;
       border: none;
       outline: none;
       font-size: 1rem;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.12);
       color: var(--text-light);
       transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
     }
-
     .comment-form input:focus {
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 0 0 2px var(--primary);
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 0 0 2px var(--accent2);
     }
-
     .comment-form button {
       padding: 12px;
       border: none;
       border-radius: 10px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #000;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      color: #fff;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(123,97,255,0.5);
     }
-
     .comment-form button:hover {
-      background: linear-gradient(135deg, var(--primary-dark), #009999);
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--accent2), var(--primary-dark));
+      transform: translateY(-2px) scale(1.03);
     }
 
     footer {
       text-align: center;
       padding: 1.2rem;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.07);
       font-size: 0.9rem;
       color: var(--text-muted);
       width: 100%;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 2px solid rgba(255,255,255,0.15);
       margin-top: auto;
       animation: fadeInUp 1.5s ease;
+      text-shadow: 0 0 5px var(--primary);
     }
 
-    /* Animations */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -269,7 +232,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .rules-box, .comments-section {
         padding: 1.5rem;
@@ -278,7 +240,6 @@
         font-size: 0.9rem;
       }
     }
-
   </style> 
 </head> 
 <body> 
@@ -387,12 +348,10 @@
       }
     }
 
-    // Mouse Events
     stack.addEventListener('mousedown', e => startDrag(e.clientX, e.clientY));
     stack.addEventListener('mousemove', e => moveDrag(e.clientX, e.clientY));
     stack.addEventListener('mouseup', e => endDrag(e.clientX, e.clientY));
 
-    // Touch Events
     stack.addEventListener('touchstart', e => {
       const touch = e.touches[0];
       startDrag(touch.clientX, touch.clientY);
@@ -411,15 +370,14 @@
       alert("✅ Your comment will be added once the admin approves it.");
       event.target.reset();
     }
-    // Prevent page scrolling while dragging cards
-stack.addEventListener('touchmove', e => {
-  if (isDragging) {
-    e.preventDefault(); // stop page scroll
-    const touch = e.touches[0];
-    moveDrag(touch.clientX, touch.clientY);
-  }
-}, { passive: false });
 
+    stack.addEventListener('touchmove', e => {
+      if (isDragging) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        moveDrag(touch.clientX, touch.clientY);
+      }
+    }, { passive: false });
   </script> 
 </body>
 </html>
