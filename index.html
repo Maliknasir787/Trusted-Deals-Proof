@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Trusted Deals with Nasir</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <!-- Google Fonts --> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"> 
   <style>
     * {
       margin: 0;
@@ -24,9 +22,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      gap: 20px; /* spacing between header, cards, and footer */
+      gap: 20px;
       padding-bottom: 20px;
-      overflow-x: hidden; /* allow vertical scroll, hide horizontal */
+      overflow-x: hidden;
     }
 
     header {
@@ -50,11 +48,82 @@
       color: #eee;
     }
 
+    /* Rules Box */
+    .rules-box {
+      position: relative;
+      background: rgba(0,0,0,0.85);
+      border-radius: 15px;
+      padding: 20px;
+      max-width: 500px;
+      width: 90%;
+      text-align: left;
+      font-family: 'Orbitron', sans-serif;
+      color: #ffcc00;
+      line-height: 1.6;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      overflow: hidden;
+    }
+
+    /* Animated Border */
+    .rules-box::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 17px;
+      background: linear-gradient(270deg, #00e6e6, #ffcc00, #ff0099, #00e6e6);
+      background-size: 600% 600%;
+      z-index: -1;
+      animation: borderMove 8s linear infinite;
+    }
+
+    @keyframes borderMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .rules-box h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      color: #00e6e6;
+    }
+
+    .rules-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .rules-box li {
+      margin-bottom: 8px;
+    }
+
+    .rules-box button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #00e6e6;
+      color: #000;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .rules-box button:hover {
+      background: #00b3b3;
+    }
+
     .card-stack {
       position: relative;
       width: 90%;
       max-width: 400px;
-      aspect-ratio: 3 / 4; /* responsive height (keeps 3:4 ratio) */
+      aspect-ratio: 3 / 4;
       margin: 20px auto;
     }
 
@@ -77,6 +146,63 @@
       object-fit: cover;
     }
 
+    /* Comments Section */
+    .comments-section {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+
+    .comments-section h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      color: #00e6e6;
+    }
+
+    .comment {
+      background: rgba(255,255,255,0.05);
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #fff;
+      border-left: 3px solid #00e6e6;
+    }
+
+    .comment-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .comment-form input {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+    }
+
+    .comment-form button {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #00e6e6;
+      color: #000;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .comment-form button:hover {
+      background: #00b3b3;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -85,34 +211,64 @@
       color: #aaa;
       width: 100%;
       border-top: 1px solid rgba(255,255,255,0.1);
-      margin-top: auto; /* keeps footer at bottom */
+      margin-top: auto;
     }
-  </style>
-</head>
-<body>
+  </style> 
+</head> 
+<body> 
+  <header> 
+    <h1>Trusted Deals with Nasir</h1> 
+    <p>Trust is our first opportunity 🤝</p> 
+  </header> 
 
-  <header>
-    <h1>Trusted Deals with Nasir</h1>
-    <p>Trust is our first opportunity 🤝</p>
-  </header>
+  <!-- Rules Box -->
+  <div class="rules-box">
+    <h2>Deal Rules</h2>
+    <ul>
+      <li>🙅‍♂️ Don't send hello/hi</li>
+      <li>💬 Jo Trick chahiye ho bas usky bary main bataye</li>
+      <li>💰 Payment First</li>
+      <li>🚫 Don't spam</li>
+      <li>📵 Don't call again and again</li>
+      <li>⏳ Wait 4 to 5 mint after payment so we can verify</li>
+      <li>⚡ After payment within 10 mints your related Hack will be delivered</li>
+    </ul>
+    <button onclick="window.open('YOUR_WHATSAPP_GROUP_LINK','_blank')">Agree with rules ✅</button>
+  </div>
 
-  <div class="card-stack" id="card-stack">
-    <!-- Add screenshots as stacked cards -->
-    <div class="card"><img src="screenshot1.jpg" alt="Deal 1"></div>
-    <div class="card"><img src="screenshot2.jpg" alt="Deal 2"></div>
-    <div class="card"><img src="screenshot3.jpg" alt="Deal 3"></div>
-    <div class="card"><img src="screenshot4.jpg" alt="Deal 4"></div>
-    <div class="card"><img src="screenshot5.jpg" alt="Deal 5"></div>
-    <div class="card"><img src="screenshot6.jpg" alt="Deal 6"></div>
-    <div class="card"><img src="screenshot7.jpg" alt="Deal 7"></div>
-    <div class="card"><img src="screenshot8.jpg" alt="Deal 8"></div>
-    <div class="card"><img src="screenshot9.jpg" alt="Deal 9"></div>
-    <div class="card"><img src="screenshot10.jpg" alt="Deal 10"></div>
+  <!-- Card Stack -->
+  <div class="card-stack" id="card-stack"> 
+    <div class="card"><img src="screenshot1.jpg" alt="Deal 1"></div> 
+    <div class="card"><img src="screenshot2.jpg" alt="Deal 2"></div> 
+    <div class="card"><img src="screenshot3.jpg" alt="Deal 3"></div> 
+    <div class="card"><img src="screenshot4.jpg" alt="Deal 4"></div> 
+    <div class="card"><img src="screenshot5.jpg" alt="Deal 5"></div> 
+    <div class="card"><img src="screenshot6.jpg" alt="Deal 6"></div> 
+    <div class="card"><img src="screenshot7.jpg" alt="Deal 7"></div> 
+    <div class="card"><img src="screenshot8.jpg" alt="Deal 8"></div> 
+    <div class="card"><img src="screenshot9.jpg" alt="Deal 9"></div> 
+    <div class="card"><img src="screenshot10.jpg" alt="Deal 10"></div> 
+  </div> 
+
+  <!-- Comments Section -->
+  <div class="comments-section">
+    <h2>What People Say 💬</h2>
+    <div class="comment">🔥 Trusted 💯</div>
+    <div class="comment">🙌 You're Great sir</div>
+    <div class="comment"> Aap boht acha se guide krte Han 🤯</div>
+    <div class="comment">Apky Hacks working hota</div>
+    <div class="comment">Thank You Soo mUch ❤️😍</div>
+    
+
+    <form class="comment-form" onsubmit="handleComment(event)">
+      <input type="text" placeholder="Write your comment..." required>
+      <button type="submit">Submit Comment</button>
+    </form>
   </div>
 
   <footer>
-    &copy; 2025 Trusted Deals with Nasir. All rights reserved.
-  </footer>
+    © 2025 Trusted Deals with Nasir. All rights reserved. 
+  </footer> 
 
   <script>
     const stack = document.getElementById('card-stack');
@@ -184,6 +340,13 @@
       const touch = e.changedTouches[0];
       endDrag(touch.clientX, touch.clientY);
     });
-  </script>
+
+    // Handle comment form
+    function handleComment(event) {
+      event.preventDefault();
+      alert("✅ Your comment will be added once the admin approves it.");
+      event.target.reset();
+    }
+  </script> 
 </body>
 </html>
